@@ -1,33 +1,4 @@
- '''
-name: Python Matrix Operations
-on:
-  workflow_dispatch:
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
 
-    - name: Run Python script
-      run: python file.py
- 
-
-  Secret-access:
-   needs: build
-   runs-on: ubuntu-latest
- 
-   if: ${{always()}}
- 
-   steps:
-    - name: Checkout repo
-      uses: actions/checkout@v2
-    - name: use a secret variable
-      env: 
-       my-secret: ${{secrets.my_secret_token}}
-      run: |
-       echo "my secret is $my-secret"
-'''
 name: Python Program
  
 on:
