@@ -1,4 +1,3 @@
-
 name: Python Program
  
 on:
@@ -26,3 +25,15 @@ jobs:
         run: |
           python index.py
  
+  secret_example:
+    #needs: Example_Environment_Variables
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+ 
+      - name: Use a secret variable
+        env:
+          SECRET_TOKEN: ${{secrets.MY_SECRET_TOKEN}}
+        run: |
+            echo "The secret Token is $SECRET_TOKEN"
